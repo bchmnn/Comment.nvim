@@ -599,8 +599,8 @@ ft.contains({tree}, {range})                               *comment.ft.contains*
 
     Usage: ~
 >lua
-        local ok, parser = pcall(vim.treesitter.get_parser, 0)
-        assert(ok, "No parser found!")
+        local parser = vim.treesitter.get_parser(0)
+        assert(parser "No parser found!")
         local tree = require('Comment.ft').contains(parser, {0, 0, -1, 0})
         print('Lang:', tree:lang())
 <

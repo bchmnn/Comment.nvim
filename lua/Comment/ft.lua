@@ -291,9 +291,9 @@ end
 ---@return nil|string #Commentstring
 ---@see comment.utils.CommentCtx
 function ft.calculate(ctx)
-    local ok, parser = pcall(vim.treesitter.get_parser, A.nvim_get_current_buf())
+    local parser = vim.treesitter.get_parser(A.nvim_get_current_buf())
 
-    if not ok then
+    if not parser then
         return ft.get(vim.bo.filetype, ctx.ctype) --[[ @as string ]]
     end
 
